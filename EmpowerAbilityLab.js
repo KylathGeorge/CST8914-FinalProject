@@ -40,6 +40,7 @@ class TabsManual {
     for (var i = 0; i < this.tabs.length; i += 1) {
       var tab = this.tabs[i];
       if (currentTab === tab) {
+        document.title = this.tabpanels[i].querySelector("h1").textContent
         tab.setAttribute('aria-selected', 'true');
         tab.removeAttribute('tabindex');
         this.tabpanels[i].classList.remove('is-hidden');
