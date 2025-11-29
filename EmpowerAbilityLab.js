@@ -6,43 +6,6 @@
 var defaultService = "home"
 
 
-function openDialog(id, triggerButton) {
-  const dialog = document.getElementById(id);
-
-  // Save the element that opened the dialog
-  dialog.dataset.trigger = triggerButton.id;
-
-  // Open the dialog as a modal
-  dialog.showModal();
-
-  // Focus first meaningful element (heading)
-  const heading = dialog.querySelector("h2");
-  if (heading) heading.focus();
-
-  // Set up focus trap
-  trapFocus(dialog);
-
-  // Escape key closes dialog
-  dialog.addEventListener("keydown", handleEscape);
-
-  // Click outside to close (native dialog has an event for this)
-  dialog.addEventListener("cancel", (e) => {
-    e.preventDefault(); // Prevent default "cancel" behavior
-    closeDialogUsing(dialog);
-  });
-}
-function closeDialog(button) {
-  const dialog = button.closest("dialog");
-  dialog.close();
-
-  //Restore focus to the triggering button
-  const triggerId = dialog.dataset.trigger;
-  if (triggerId) {
-    const triggerEl = document.getElementById(triggerId);
-    if (triggerEl) triggerEl.focus();
-  }
-}
-
 class TabsManual {
   constructor(groupNode) {
     console.log(111)
