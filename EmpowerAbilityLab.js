@@ -75,8 +75,7 @@ class TabsManual {
         this.tabpanels[i].classList.remove('is-hidden');
         //make visible to screen readers
         this.tabpanels[i].setAttribute('aria-hidden', 'false'); 
-        const heading = panel.querySelector("h1");
-        if (heading) heading.focus();
+       
       } else {
         tab.setAttribute('aria-selected', 'false');
         tab.tabIndex = -1;
