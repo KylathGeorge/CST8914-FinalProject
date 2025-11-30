@@ -73,12 +73,16 @@ class TabsManual {
         tab.setAttribute('aria-selected', 'true');
         tab.removeAttribute('tabindex');
         this.tabpanels[i].classList.remove('is-hidden');
-        this.tabpanels[i].setAttribute('aria-hidden', 'false'); // make visible to screen readers
+        //make visible to screen readers
+        this.tabpanels[i].setAttribute('aria-hidden', 'false'); 
+        const heading = panel.querySelector("h1");
+        if (heading) heading.focus();
       } else {
         tab.setAttribute('aria-selected', 'false');
         tab.tabIndex = -1;
         this.tabpanels[i].classList.add('is-hidden');
-        this.tabpanels[i].setAttribute('aria-hidden', 'true');  // hide from screen readers
+        //hide from screen readers
+        this.tabpanels[i].setAttribute('aria-hidden', 'true');  
       }
     }
   }
