@@ -73,15 +73,12 @@ class TabsManual {
         tab.setAttribute('aria-selected', 'true');
         tab.removeAttribute('tabindex');
         this.tabpanels[i].classList.remove('is-hidden');
-        //make visible to screen readers
-        this.tabpanels[i].setAttribute('aria-hidden', 'false'); 
-       
+        this.tabpanels[i].setAttribute('aria-hidden', 'false'); // make visible to screen readers
       } else {
         tab.setAttribute('aria-selected', 'false');
         tab.tabIndex = -1;
         this.tabpanels[i].classList.add('is-hidden');
-        //hide from screen readers
-        this.tabpanels[i].setAttribute('aria-hidden', 'true');  
+        this.tabpanel[i].setAttribute('aria-hidden', 'true');  // hide from screen readers
       }
     }
   }
